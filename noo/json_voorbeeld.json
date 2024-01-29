@@ -1,0 +1,19 @@
+{
+    "gebruiker": {
+      "naam": "NAAM"
+    },
+    "naam": [
+      "google"
+    ],
+    "link": [
+      "https://google.com"
+    ],
+    "icon": {
+      "icondata": [
+        "fa-thumbs-up"
+      ],
+      "icontype": [
+        "fa-solid"
+      ]
+    }
+  }

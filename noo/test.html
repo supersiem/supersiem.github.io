@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bublecated Div</title>
+</head>
+<body>
+
+<!-- Original div element -->
+<div id="container">
+    <a href="https://www.google.com/" target="_blank">
+        <div>
+            <i class="fa-solid fa-thumbs-up fa-3x"></i>
+            <p>google</p>
+        </div>
+    </a>
+</div>
+
+<!-- Button to bublecate the div -->
+<button onclick="bublecateDiv()">Bublecate Div</button>
+
+<script>
+    function bublecateDiv() {
+        // Get the original div
+        var originalDiv = document.getElementById('container').firstElementChild.cloneNode(true);
+
+        // Change the URL and text
+        originalDiv.querySelector('a').href = 'https://www.example.com/';
+        originalDiv.querySelector('p').innerText = 'example';
+
+        // Append the bublecated div to the body (or any other container)
+        document.body.appendChild(originalDiv);
+    }
+</script>
+
+</body>
+</html>
