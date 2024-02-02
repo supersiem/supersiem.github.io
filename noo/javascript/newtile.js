@@ -79,7 +79,7 @@ function get_JSON(){
 function submit_wigit() {
     // eerst de waarden van de inputs krijgen
     // naam
-    var link = document.getElementById("tile_link").value;
+    var link = document.getElementById("wigit_link").value;
     // icon
     new_tile(link);
     window.location.href = "main.html"
