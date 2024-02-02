@@ -3,7 +3,6 @@
 <head>
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/tilles.css">
-  <script src="javascript/main.js"> </script>
   <script src="javascript/newtile.js"> </script>
 <script src="https://kit.fontawesome.com/4f718ec3d3.js" crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,16 +31,35 @@
         <input type="text" name="icon_type" id="fa_icon_type_selector"><br>
         <button type="button" onclick="submit_form()">Submit</button>
     </form>
+    <h2>new wigit</h2>
+    <form>
+        <label for="wigit_cofig">link</label>
+        <input type="text" name="link" id="tile_link"><br><br>
+        <label for="fa_icon_selector">icon</label>
+        <input type="text" name="icon_data" id="fa_icon_selector"><br>
+        <label for="fa_icon_type_selector">icon type</label>
+        <input type="text" name="icon_type" id="fa_icon_type_selector"><br>
+        <button type="button" onclick="submit_form()">Submit</button>
+    </form>
     <h2>verwijderen tile naam</h2>
     <form>
         <label for="remove_tile_name">naam</label>
         <input type="text" name="naam" id="remove_tile_name"><br>
         <button type="button" onclick="A_remove()">Submit</button>
     </form>
+    <div id="wigit_cofig">
+    </div>
     <h2>verwijderen tile nummer</h2>
     <form>
         <label for="remove_tile_num">nummer</label>
         <input type="text" name="naam" id="remove_tile_num"><br>
         <button type="button" onclick="B_remove()">Submit</button>
     </form>
+    <h2>noo data</h2>
+    <p>gebruik inspect als mogelijk</p>
+    <form><button type="button" onclick="verwijder()">clear data</button><button type="button" onclick="restor()">restor data</button>
+        <br><label>data</label>
+        <input type="text"  id="data_in"><br></form>
+    <p id="data_dump">data</p>
+
 </div>

@@ -1,7 +1,4 @@
 {
-    "gebruiker": {
-      "naam": "NAAM"
-    },
     "naam": [
       "google"
     ],
@@ -15,5 +12,11 @@
       "icontype": [
         "fa-solid"
       ]
+    },
+    "type":[
+        "0"
+    ],
+    "info":{
+        "V" : 1.1
     }
   }

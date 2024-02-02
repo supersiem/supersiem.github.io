@@ -3,22 +3,21 @@ window.addEventListener('DOMContentLoaded', function() {
 
     setup()
     make_tiles()
-    //duplicateAndModify("https://www.example.com", "ytyfyfyftyf","fa-cloud");
-    //duplicateAndModify("https://www.example.com", "hallo","fa-thumbs-up");
-    remove_the_placeholder();
 });
 function make_tiles() {
     data = get_JSON();
     console.log("loading tiles");
     for (let i = 0; i < data.naam.length; i++) {
         console.log("loading "+data.naam[i])
-        duplicateAndModify(data.link[i],data.naam[i],data.icon.icondata[i],data.icon.icontype[i])
+        duplicateAndModify(data.link[i],data.naam[i],data.icon.icondata[i],data.icon.icontype[i],data.type[i])
     }
     remove_the_placeholder();
 
 }
-function duplicateAndModify(link, text, icondata, icontype) {
-    console.log(link);
+function duplicateAndModify(link, text, icondata, icontype, type) {
+    console.log(type)
+    if (type == "0") {
+        console.log("normal")
 
     // Get the original tile
     var originalTile = document.getElementById('tile');
@@ -37,25 +36,29 @@ function duplicateAndModify(link, text, icondata, icontype) {
 
     // Append the cloned tile to the container
     document.getElementById('container').appendChild(clonedTile);
+
+    } else {
+        console.log("wigit")
+            // Get the original tile
+    var originalTile = document.getElementById('wigit');
+    var clonedTile = originalTile.cloneNode(true);
+    clonedTile.id = link
+
+    clonedTile.querySelector('script').src = link
+
+        // Append the cloned tile to the container
+        document.getElementById('container').appendChild(clonedTile);
+
+    }
 }
 function remove_the_placeholder() {
     var originalTile = document.getElementById('tile');
     originalTile.remove();
-}
-function new_tile(text,url,icondata, icontype) {
-    //note the icon is using font awsom 
-    data = get_JSON();
-    data.naam.push(text);
-    data.icon.icondata.push(icondata);
-    data.icon.icontype.push(icontype);
-    data.link.push(url);
-    localStorage.setItem("main",JSON.stringify(data));
-
+    var originalTile = document.getElementById('wigit');
+    originalTile.remove();
 }
 function get_JSON(){
     data = JSON.parse(localStorage.getItem("main"));
     return data;
 }
-function setup() {
-    // set the base json
-    if(localStorage.length === 0) {localStorage.setItem("main",'{"gebruiker":{"naam":"NAAM"},"naam":["google"],"link":["https://google.com"],"icon":{"icondata":["fa-thumbs-up"],"icontype":["fa-solid"]}}' );}}
+function setup() {if(localStorage.length === 0) {localStorage.setItem("main",'{"naam":["google"],"link":["https://google.com"],"icon":{"icondata":["fa-thumbs-up"],"icontype":["fa-solid"]},"type":["0"],"info":{"V":1.1}}' );}}
