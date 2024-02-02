@@ -11,7 +11,7 @@ function submit_form() {
     // icon
     var icon_data = "fa-"+document.getElementById("fa_icon_selector").value;
     var icon_type = "fa-"+document.getElementById("fa_icon_type_selector").value;
-    new_tile(naam,link,icon_data,icon_type);
+    new_tile(naam,link,icon_data,icon_type,"0");
     window.location.href = "main.html"
 }
 function A_remove() {
@@ -59,14 +59,14 @@ function restor(){
     p.innerText = line
 }
 // from main.js
-function new_tile(text,url,icondata, icontype) {
+function new_tile(text,url,icondata, icontype, type) {
     //note the icon is using font awsom 
     
     data = get_JSON();
     data.naam.push(text);
     data.icon.icondata.push(icondata);
     data.icon.icontype.push(icontype);
-    data.type.push("0");
+    data.type.push(type);
     data.link.push(url);
     localStorage.setItem("main",JSON.stringify(data));
 
@@ -81,7 +81,7 @@ function submit_wigit() {
     // naam
     var link = document.getElementById("wigit_link").value;
     // icon
-    new_tile(link);
+    new_wigit(link);
     window.location.href = "main.html"
 }
 function new_wigit(url) {
