@@ -3,10 +3,23 @@
 <html>
 
 <head>
-    <script src="javascript/url-fix.js"></script>
+    <script>    
+        // maak base
+        const baseElement = document.createElement("base");
+        baseElement.id = "baseElement";
+        baseElement.href = window.location.origin;
+        document.head.appendChild(baseElement);
+
+        // foto's
+        const images = document.getElementsByTagName("img");
+        for (let i = 0; i < images.length; i++) {
+            images[i].src =
+                window.location.origin + images[i].getAttribute("data-src");
+        }
+    </script>
     <link rel="stylesheet" href="css/main.css" id="main_css" />
     <link rel="stylesheet" href="css/tilles.css" id="tile_css" />
-    <script src="javascript/main.js" type="module"></script>
+    <script src="instelingen/verwijder/script.js" ></script>
     <script src="https://kit.fontawesome.com/4f718ec3d3.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
@@ -27,21 +40,17 @@
         
     </div>
     <div class="padding"></div>
+
     <div class="main">
         <div id="container">
-            <a id="tile" href="https://www.google.com/" target="_blank">
+            <a id="tile" href="" >
                 <div>
-                    <i class="fa-solid fa-thumbs-down fa-3x"></i>
+                    <i class="fa-solid fa-trash-can fa-3x"></i>
                     <p>error</p>
                 </div>
             </a>
-
-            <div id="wigit">
-                <script type="module" ></script>
-                <i class="fa-solid fa-thumbs-down fa-3x"></i>
-                <p>widget</p>
-            </div>
         </div>
+
 
         <div class=""></div>
     </div>
