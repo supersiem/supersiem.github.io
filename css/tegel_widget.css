@@ -1,0 +1,21 @@
+body {
+    background-color:#ffffff;
+  }
+  #container {
+    
+    grid-template-columns: 25% 25% 25% 25%;
+    text-align: left;
+    display: grid;
+    gap: 10px;
+    
+  }
+  .tegel {
+    
+    text-align: left;
+    
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
+    background: rgb(233, 233, 233);
+    padding: 10px;
+    height: 9em;
+  }
